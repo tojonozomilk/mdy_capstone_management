@@ -1,0 +1,34 @@
+# server port
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        name: MIDEYO-CAPSTONE
+
+# datasource
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project_management?useUnicode=true&characterEncoding=UTF-8&useAffectedRows=true
+    username: root
+    password: ethan
+  resources:
+    static-locations: file:${upload.location},classpath:/build/
+
+# upload folder
+upload:
+  location: file
+  dir: /upload/
+
+# report folder
+report:
+  location: file
+  dir: /report/
+
+# mybatis-plus configuration
+mybatis-plus:
+  configuration:
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false

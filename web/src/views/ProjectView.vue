@@ -4,6 +4,7 @@
             <span>Projects</span>
             <el-button v-if="role === 'ProjectClient'" slot="reference" style="float: right; padding: 3px" type="success" @click="onAdd" icon="el-icon-plus"/>
         </div>
+        <el-button v-if="role !== 'Student'" style="float: left; padding: 3px" type="warning" @click="goReport" href="http://localhost:8080/api/report">Generate Report</el-button>
         <!-- Project列表 -->
         <ProjectTable :loading="loading" :options="options" :pageData="projectPageData" :onView="showViewProject"
             :onFetchData="fetchProjectData" />
@@ -11,10 +12,12 @@
 </template>
 
 <script>
+// import { getReport } from '@/api/FrontAPI'
 import { getProjectList } from '@/api/ProjectAPI';
 import { getAllUserId } from "@/api/UserAPI";
 import ProjectTable from '@/components/table/ProjectTable.vue';
 import { errorHandler } from '@/utils/RequestUtils';
+// import axios from "axios";
 export default {
     components: {
         ProjectTable
@@ -61,6 +64,9 @@ export default {
         },
         onAdd() {
             this.$router.push('/project/0')
+        },
+        goReport() {
+          window.open("http://localhost:8080/api/report", "_blank")
         }
     }
 };

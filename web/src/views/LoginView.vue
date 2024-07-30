@@ -2,8 +2,7 @@
     <el-card class="box-card">
         <div slot="header">
             <span>Login</span>
-            <el-button slot="reference" style="float: right; padding: 3px" type="default" @click="handleRegister()">Go
-                to create</el-button>
+            <el-button slot="reference" style="float: right; padding: 3px" type="primary" @click="handleRegister()">Register</el-button>
         </div>
         <el-row>
             <el-col :span="9">

@@ -136,3 +136,9 @@ export const getUserInfo = async (userId) => {
     .get(requestMapping + "/getUserInfo", { params: { userId } })
     .then(responseHandler);
 };
+
+// export const getReport = async () => {
+//   return request
+//     .get(requestMapping + "/report")
+//     .then(responseHandler);
+// };

@@ -1,5 +1,6 @@
 const { request, responseHandler } = require("../utils/RequestUtils");
 
+// Request sub root
 const requestMapping = "/api";
 
 /**

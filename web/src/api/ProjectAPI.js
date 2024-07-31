@@ -1,12 +1,12 @@
 const { request, responseHandler } = require("../utils/RequestUtils");
 
-// 基础请求路径
+// Request sub root
 const requestMapping = "/project";
 
 /**
  * 分页请求Project
- * @param query 查询条件
- * @returns Project分页数据
+ * @param query
+ * @returns Project_Pagedata
  */
 export const getProjectList = async (query) => {
   return request

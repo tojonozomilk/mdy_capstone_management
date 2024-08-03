@@ -138,7 +138,7 @@ public class MessageServiceImpl extends ServiceImpl<MessageMapper, Message> impl
     public List<Notification> getNotifications(Integer userId) {
         LambdaQueryWrapper<Message> wrapper = new LambdaQueryWrapper<>();
         //select * from message where receiver_id = 1 and (type = 'Notice' or (is_read = 0 and type = 'Chat')) order by create_date desc limit 20
-        wrapper.eq(Message::getReceiverId, 1)
+        wrapper.eq(Message::getReceiverId, userId)
                 .and(w -> w.eq(Message::getType, "Notice")
                         .or(subWrapper -> subWrapper.eq(Message::getIsRead, 0)
                                 .eq(Message::getType, "Chat")))

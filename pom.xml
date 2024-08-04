@@ -21,6 +21,16 @@
         <relativePath/>
     </parent>
 
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
 		<!-- springboot-mvc -->
         <dependency>

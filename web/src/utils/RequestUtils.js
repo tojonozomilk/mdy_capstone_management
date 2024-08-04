@@ -3,7 +3,7 @@ import qs from "qs";
 import { Message } from "element-ui";
 
 // 后端服务地址
-export const BASE_URL = "http://localhost:8080";
+export const BASE_URL = "http://192.168.1.100:8080";
 
 // ajax请求基础参数
 export const request = axios.create({

@@ -17,7 +17,7 @@ import ChatView from "@/views/ChatView.vue";
 import ContainerView from "@/views/ContainerView.vue";
 import LoginView from "@/views/LoginView.vue";
 import RegisterView from "@/views/RegisterView.vue";
-import SignContianerView from "@/views/SignContianerView.vue";
+import SignContainerView from "@/views/SignContainerView.vue";
 
 Vue.use(VueRouter);
 
@@ -105,7 +105,7 @@ const routes = [
   },
   {
     path: "/",
-    component: SignContianerView,
+    component: SignContainerView,
     children: [{
       path: "login",
       name: "login",

@@ -5,7 +5,7 @@
             <el-table-column label="Name" prop="username" />
             <el-table-column label="Avatar">
                 <template slot-scope="scope">
-                    <el-avatar shape="square" :size="32" :src="`http://localhost:8080${scope.row.avatar}`"></el-avatar>
+                    <el-avatar shape="square" :size="32" :src="`http://192.168.1.100:8080${scope.row.avatar}`"></el-avatar>
                 </template>
             </el-table-column>
             <el-table-column label="Email" prop="email" />

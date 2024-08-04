@@ -2,7 +2,7 @@
   <el-popover placement="top-start" width="250" trigger="hover">
     <el-card class="box-card" shadow="never">
       <div slot="header" class="clearfix">
-        <el-avatar :src="`http://localhost:8080${user.avatar}`" :size="64" shape="square" />
+        <el-avatar :src="`http://192.168.1.100:8080${user.avatar}`" :size="64" shape="square" />
         <el-button type="danger" style="float: right; padding: 5px" @click="handelLogout">Logout</el-button>
       </div>
       <el-descriptions :column="1">

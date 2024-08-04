@@ -70,7 +70,7 @@ export default {
 
                         const sentByMe = message.senderId == this.me.userId
                         message.avatar = sentByMe ? this.me.avatar : this.contact.avatar
-                        message.avatar = `http://localhost:8080${message.avatar}`
+                        message.avatar = `http://192.168.1.100:8080${message.avatar}`
                         message.sentByMe = sentByMe;
 
                         let insert = false;

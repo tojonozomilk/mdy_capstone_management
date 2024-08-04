@@ -1,0 +1,46 @@
+version: '3.7'
+services:
+
+  mysql:
+    # 使用 MySQL 8.0 镜像
+    image: mysql:8.0
+    container_name: mysql
+    # 设置 MySQL 的环境变量,包括 root 密码和数据库名称
+    environment:
+      MYSQL_ROOT_PASSWORD: ethan
+      MYSQL_DATABASE: project_management
+    # 挂载 MySQL 数据目录到宿主机
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # 挂载初始化 SQL 脚本到 MySQL 容器
+      - ./create.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    restart: always
+
+
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - backend
+
+volumes:
+  mysql-data:

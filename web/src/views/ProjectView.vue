@@ -4,7 +4,7 @@
             <span>Projects</span>
             <el-button v-if="role === 'ProjectClient'" slot="reference" style="float: right; padding: 3px" type="success" @click="onAdd" icon="el-icon-plus"/>
         </div>
-        <el-button v-if="role !== 'Student'" style="float: left; padding: 3px" type="warning" @click="goReport" href="http://localhost:8080/api/report">Generate Report</el-button>
+        <el-button v-if="role !== 'Student'" style="float: left; padding: 3px" type="warning" @click="goReport" href="http://192.168.1.100:8080/api/report">Generate Report</el-button>
         <!-- Project列表 -->
         <ProjectTable :loading="loading" :options="options" :pageData="projectPageData" :onView="showViewProject"
             :onFetchData="fetchProjectData" />
@@ -66,7 +66,7 @@ export default {
             this.$router.push('/project/0')
         },
         goReport() {
-          window.open("http://localhost:8080/api/report", "_blank")
+          window.open("http://192.168.1.100:8080/api/report", "_blank")
         }
     }
 };

@@ -48,7 +48,7 @@ export default {
             getUserInfo(this.userId)
                 .then((res) => {
                     this.user = res
-                    this.user.url = `http://localhost:8080${this.user.avatar}`
+                    this.user.url = `http://192.168.1.100:8080${this.user.avatar}`
                 })
                 .catch(errorHandler);
         }

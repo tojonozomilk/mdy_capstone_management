@@ -13,7 +13,7 @@
                 <el-input show-password v-model="editForm.password" />
             </el-form-item>
             <el-form-item label="Avatar" prop="avatar">
-                <el-upload action="http://localhost:8080/api/upload" name="file" list-type="picture-card"
+                <el-upload action="http://192.168.1.100:8080/api/upload" name="file" list-type="picture-card"
                     multiple="false" :file-list="fileList" accept="jpeg,jpg,png" :on-success="handleUploadAvatar"
                     :on-remove="handleRemoveAvatar">
                     <i class="el-icon-upload"></i>
@@ -82,7 +82,7 @@ export default {
             if (form) {
                 this.editForm = form;
                 if (form.avatar && form.avatar != this.fileList?.[0]?.name) {
-                    this.fileList = [{ name: form.avatar, url: `http://localhost:8080${form.avatar}` }];
+                    this.fileList = [{ name: form.avatar, url: `http://192.168.1.100:8080${form.avatar}` }];
                 }
             }
         }
@@ -98,7 +98,7 @@ export default {
         handleUploadAvatar(response) {
             const url = response.data
             this.editForm.avatar = url
-            this.fileList = [{ name: url, url: `http://localhost:8080${url}` }]
+            this.fileList = [{ name: url, url: `http://192.168.1.100:8080${url}` }]
         },
         handleRemoveAvatar() {
             this.editForm.avatar = null
